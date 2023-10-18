@@ -21,7 +21,16 @@ module.exports = {
           'css-loader',   // Convert CSS into CommonJS
           'sass-loader'   // Compile Sass to CSS
         ]
-      }
+      },
+      {
+        test: /\.css$/, // Sass files
+        include: path.resolve(__dirname, 'assets/css'), // Inclure uniquement les fichiers Sass du dossier assets/css
+        use: [
+          'style-loader', // Inject styles into DOM
+          'css-loader',   // Convert CSS into CommonJS
+          'sass-loader'   // Compile Sass to CSS
+        ]
+      },
     ]
   }
 };
